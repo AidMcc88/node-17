@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Titanfall Titans</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Titan Collection</h1>
+        <button id="add-titan-button">Add New Titan</button>
+    </header>
+
+    <main>
+        <section id="titan-list" class="titan-list"></section>
+
+        <div id="titan-form-container" class="hidden">
+            <h2 id="form-title">Add New Titan</h2>
+            <form id="titan-form" enctype="multipart/form-data">
+                <input type="hidden" name="_id" value="-1">
+                <label for="name"> Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="class">Class:</label>
+                <input type="text" id="class" name="class" required>
+                <label for="weapon">Weapon:</label>
+                <input type="text" id="weapon" name="weapon" required>
+                <label for="ability1">Ability 1:</label>
+                <textarea id="ability1" name="ability1" required></textarea>
+                <label for="ability2">Ability 2:</label>
+                <textarea id="ability2" name="ability2" required></textarea>
+                <label for="ability3">Ability 3:</label>
+                <textarea id="ability3" name="ability3" required></textarea>
+                <label for="img">Upload Image:</label>
+                <input type="file" id="img" name="img" required>
+                <button type="submit">Submit</button>
+            </form>            
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
