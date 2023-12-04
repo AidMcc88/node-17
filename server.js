@@ -10,6 +10,29 @@ const mongoose = require("mongoose");
 
 const upload = multer({ dest: __dirname + "/public/images" });
 
+mongoose
+    .connect("mongodb+srv://aidmcc88:dzrn36ej@cluster0.gmtl9ec.mongodb.net/")
+    .then(() => {
+        console.log("Connected to mongodb")
+    })
+    .catch((error) => console.log("Couldn't connect to mongodb", error));
+
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+});
+
+const titanSchema = new mongoose.Schema({
+    name:String,
+    class:String,
+    weapon:String,
+    ability1:String,
+    ability2:String,
+    ability3:String,
+    img:String
+});
+
+const Titan = mongoose.model("Titan", titanSchema);
+
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
